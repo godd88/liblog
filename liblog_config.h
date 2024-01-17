@@ -13,7 +13,7 @@ typedef enum {
 typedef struct 
 {
     char *name;
-    char enabled;   // TODO
+    char timestamp;
     FILE* fp;
 } logg_Mod_Setting_t;
 

@@ -23,7 +23,7 @@ extern int Log_Write(e_log_level level, e_log_mod_id mod_id,const char *subModul
 #define log_warn(fmt, args...)     if (log_get_level()<=LOG_LEVEL_WARN)  Log_Write(LOG_LEVEL_WARN,  LOG_MOD_ID, __FUNCTION__, "[%s:%d]:" "\t" fmt, (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__), __LINE__, args);
 #define log_error(fmt, args...)    if (log_get_level()<=LOG_LEVEL_ERROR) Log_Write(LOG_LEVEL_ERROR, LOG_MOD_ID, __FUNCTION__, "[%s:%d]:" "\t" fmt, (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__), __LINE__, args);
 
-extern int Log_Init(char* logfile, e_log_mod_id mod_id, e_log_level level);
+extern int Log_Init(char* logfile, e_log_mod_id mod_id, e_log_level level, char timestamp);
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
