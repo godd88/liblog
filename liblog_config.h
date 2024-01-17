@@ -21,7 +21,7 @@ typedef struct
 /****************************************************/
 /****************** 修改配置的地方 *******************/
 #define MAX_LOG_BUF         2048
-#define LOG_MOD_ID          LOG_MOD_RESERVE;           // 需要在自己的模块中#undef 并重新#define
+// e_log_mod_id LOG_MOD_ID = LOG_MOD_RESERVE;           // 把宏改成变量，自己在模块中使用static 变量
 
 static logg_Mod_Setting_t g_Mod_Setting[LOG_MOD_MAX] =  // 用static 避免.h中定义变量重复定义
 {
