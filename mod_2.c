@@ -1,6 +1,11 @@
 #include "liblog.h"
 
-static e_log_mod_id LOG_MOD_ID = LOG_MOD_TEST2;
+#ifdef LOG_MOD_ID
+#undef LOG_MOD_ID
+#define LOG_MOD_ID LOG_MOD_TEST2
+#else
+#define LOG_MOD_ID LOG_MOD_TEST2
+#endif
 
 void example_mod2() {
     Log_Init("mod2.log", LOG_MOD_TEST2, LOG_LEVEL_INFO, 0);
