@@ -2,11 +2,18 @@
 
 
 extern void example_mod1();
-extern void example_mod2();
+extern int example_mod2();
+
+#define LOG_MOD_ID LOG_MOD_MAIN
+
 
 int main(int argc, char** argv) {
-    example_mod1();
-    example_mod2();
+    int rt = 0;
+    Log_Init("main.log", LOG_MOD_ID, LOG_LEVEL_DEBUG, 1);
 
-    return 0;
+    example_mod1();
+    log_call_func(example_mod2()); // 函数返回值传给 rt
+
+    printf("rt = %d\n", rt);
+    return rt;
 }
